@@ -1,0 +1,23 @@
+{
+  "name": "projectdos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Tim T",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mysql2": "^1.5.0",
+    "mz": "^2.7.0",
+    "request-promise": "^4.2.2",
+    "routes": "^2.1.0",
+    "sequelize": "^4.22.8",
+    "twitter": "^1.7.1"
+  }
+}

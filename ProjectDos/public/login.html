@@ -1,0 +1,45 @@
+<div id="nav-div">
+  <nav>
+    <ul class="nav nav-pills">
+     
+      <li class="nav-item" id="loggedInAs"> 
+      </li>
+      <button id="nbBtnLogin" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
+        <span class="glyphicon glyphicon-log-in" my-2 my-sm-0></span> Login
+
+      <!-- Login Modal -->
+      <div id="myModal" class="modal"><!-- begin login modal -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+          </div>
+              <input class="input" id="txtEmail" type="email" placeholder="Email">
+              <input class="input" id="txtPassword" type="password" placeholder="Password">
+              <div class="buttons">
+                <button id="btnLogin" class="btn btn-secondary">Log In</button>
+              </div>
+          </div>
+      </div><!-- close login modal -->
+
+      <!-- Signup Modal -->
+      <div id="signUpModal" class="modal"><!-- begin signup modal -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+          </div>
+              <input class="input" id="txtEmail2" type="email" placeholder="Email">
+              <input class="input" id="txtPassword2" type="password" placeholder="Password">
+              <input class="input" id="txtDispName" type="name" placeholder="Display Name">
+              <div class="buttons">
+                <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+                </div>
+          </div>
+      </div><!-- close -->    
+
+      <form id="search-form" class="form-inline my-2 my-lg-0">
+      <input id="searchval" class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </ul>
+  </nav>
+</div>
