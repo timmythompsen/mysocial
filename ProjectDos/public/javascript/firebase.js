@@ -1,13 +1,13 @@
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA9P_pwSntEpaYayjDHdv3qjf4NPtcqVTg",
-    authDomain: "social-dash-2dce0.firebaseapp.com",
-    databaseURL: "https://social-dash-2dce0.firebaseio.com",
-    projectId: "social-dash-2dce0",
-    storageBucket: "social-dash-2dce0.appspot.com",
-    messagingSenderId: "1087841028961"
-  };
-  firebase.initializeApp(config);
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyA9P_pwSntEpaYayjDHdv3qjf4NPtcqVTg",
+  authDomain: "social-dash-2dce0.firebaseapp.com",
+  databaseURL: "https://social-dash-2dce0.firebaseio.com",
+  projectId: "social-dash-2dce0",
+  storageBucket: "social-dash-2dce0.appspot.com",
+  messagingSenderId: "1087841028961"
+};
+firebase.initializeApp(config);
 
   /******/
  //Login Modal Function
@@ -62,4 +62,35 @@ window.onclick = function(event) {
     }
 }
 
+// This function inserts a new user into the DB
+function insertUser(event) {
+  // event.preventDefault();
+  var user = {
+    name: txtDispName.value,
+    email: txtEmail.value,
+    facebook_name: txtFBName.value,
+    twitter_name: txtTwitterName.value,
+    insta_name: txtInstagramName.value
+  };
+
+  $.post("api/users", user, function(result) {
+    console.log('post result: ', result);
+    console.log('post successful');
+  });
+
+};
+
+// This function retrieves the current user's record
+function findUser(event) {
+  // event.stopPropagation();
+  var id = sessionStorage.getItem("UserID");
+  console.log('var id: ', id);
+  console.log("/api/users/"+id);
+
+  $.get("/api/users/"+id, function(data) {
+    console.log('post result: ', data);
+    console.log('post successful');
+  })
+  
+};
 

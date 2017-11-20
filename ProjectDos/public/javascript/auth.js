@@ -65,6 +65,7 @@ window.onload=(function() {
             displayName: dispName
         }).then(function() {
             // Update successful.
+            insertUser(); // inserts record into mysql using sequelize
             $("#loggedInAs").html("Logged in as: " + user.displayName + "   ");
         }, function(error) {
             // An error happened.
@@ -93,6 +94,11 @@ window.onload=(function() {
 
   });
 
+  nbUpdateFeeds.addEventListener('click', e=> {
+    console.log("nbUpdateFeeds clicked");
+    getAllFeeds();
+  });
+
   // add real time listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
@@ -101,12 +107,13 @@ window.onload=(function() {
       console.log("Unique Id (sessionStorage: UniqueID): " + sessionStorage.getItem("UniqueID"));
       sessionStorage.setItem("UserID",firebaseUser.email);
       console.log("User email/login (sessionStorage: UserID): " + sessionStorage.getItem("UserID"));
-      sessionStorage.setItem("TwitterID",txtTwitterName.value);
-      console.log("TwitterName (sessionStorage: TwitterID): " + sessionStorage.getItem("TwitterID"));      
+      // sessionStorage.setItem("TwitterID",txtTwitterName.value);
+      // console.log("TwitterName (sessionStorage: TwitterID): " + sessionStorage.getItem("TwitterID"));      
       // var favorite=database.ref("/userSpots/"+ sessionStorage.getItem("UniqueID")+"/");
       // console.log(favorite);
       // btnLogout.classList.remove('hide');
       nbBtnLogout.classList.remove('hide');
+      nbUpdateFeeds.classList.remove('hide');
       nbBtnLogin.classList.add('hide');
       nbBtnSignUp.classList.add('hide');
       console.log(firebaseUser.hasOwnProperty('displayName'), firebaseUser.displayName);
@@ -114,15 +121,25 @@ window.onload=(function() {
         return;
       } else {
         $("#loggedInAs").html("Logged in as: " + firebaseUser.displayName + "   ");
-
+        findUser();
         // var loggedIn = $("#nbBtnLogin");
         // $(loggedIn).replaceWith("<button class='btn btn-outline-success my-2 my-sm-0 btn-static'>" + "<span class='glyphicon glyphicon-tint blue'></span>" + "Username: " + firebaseUser.displayName + "</button>");
       }
     } else {
       console.log('not logged in'); 
       nbBtnLogout.classList.add('hide');
+      nbUpdateFeeds.classList.add('hide');
       nbBtnLogin.classList.remove('hide');
       nbBtnSignUp.classList.remove('hide');  
     }
   });
+
+  // ===== FEEDS ===== //
+
+  // Function to get feeds
+  function getAllFeeds() {
+    getFavTweets();
+    // get FB, Instagram, etc functions go here
+  };
+
  });

@@ -8,8 +8,6 @@ var fs = require('mz/fs');
 
 var client = new Twitter(Keys.twitterKeys);
 
-getFavTweets();
-
 function getFavTweets() {
 	var params = {screen_name: 'HafnerTest', count:20};
 	// console.log("before client get");
@@ -25,6 +23,12 @@ function getFavTweets() {
 			console.log("error");
 			}
 	});
+};
+
+// Function to get feeds
+function getAllFeeds() {
+  getFavTweets();
+  // get FB, Instagram, etc functions go here
 };
 
 // Routes
@@ -55,21 +59,22 @@ module.exports = function(app) {
     })
     // Add sequelize code to find all posts where the category is equal to req.params.category,
     // return the result to the user with res.json
-  });
+  }); */
 
-  // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-
-    db.Post.findAll({
+  // Get route for retrieving a single user
+  app.get("/api/users/:id", function(req, res) {
+    var id = req.params.id;
+    db.User.findAll({
       where: {
-        id : req.params.id
+        email : id
       }
     }).then(function(dbpost){
       res.json(dbpost);
+      console.log('find 1 ', dbpost);
     })
     // Add sequelize code to find a single post where the id is equal to req.params.id,
     // return the result to the user with res.json
-  }); */
+  }); 
 
   // POST route for saving a new user - Brian 11/19/17 
   app.post("/api/users", function(req,res) {
