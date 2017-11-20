@@ -3,14 +3,14 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [3]
-      }
+      // validate: {
+      //   len: [3]
+      // }
     },
     email: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [5]
+      // len: [5]
     },
     facebook_name: {
       type: DataTypes.STRING

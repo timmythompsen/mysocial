@@ -31,11 +31,13 @@ function getFavTweets() {
 // =============================================================
 module.exports = function(app) {
 
+  // Route to get landing page
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  app.get("/api/posts", function(req, res) {
+  // GET route for getting all users
+  app.get("/api/users", function(req, res) {
     db.User.findAll({}).then(function(data){
       res.json(data);
     });
@@ -67,9 +69,23 @@ module.exports = function(app) {
     })
     // Add sequelize code to find a single post where the id is equal to req.params.id,
     // return the result to the user with res.json
+  }); */
+
+  // POST route for saving a new user - Brian 11/19/17 
+  app.post("/api/users", function(req,res) {
+    console.log(req.body);
+    db.User.create({
+      name: req.body.name,
+      email: req.body.email,
+      facebook_name: req.body.facebook_name,
+      twitter_name: req.body.twitter_name,
+      insta_name: req.body.insta_name
+    }).then(function(post){
+      res.json(post);
+    });
   });
 
-  // POST route for saving a new post
+  /* // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
 
     console.log(req.body);
