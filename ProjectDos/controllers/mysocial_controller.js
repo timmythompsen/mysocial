@@ -8,9 +8,22 @@ var fs = require('mz/fs');
 
 var client = new Twitter(Keys.twitterKeys);
 
-getFavTweets();
 
-function getFavTweets() {
+//comment out 13 and 15 for testing
+//getFavTweets();
+
+//module.exports = getFavTweets;
+
+
+
+
+
+// for test
+
+exports.getFavTweets = function(){
+
+
+//function getFavTweets() {
 	var params = {screen_name: 'HafnerTest', count:20};
 	// console.log("before client get");
 	client.get('favorites/list', params,function(error, tweets, response) {
@@ -29,7 +42,9 @@ function getFavTweets() {
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+//module.exports = function(app) {
+
+  exports.app = function(app) {
 
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
