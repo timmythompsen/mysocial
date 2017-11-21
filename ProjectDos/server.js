@@ -23,7 +23,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
 
-require("./controllers/mysocial_controller.js").app(app);
+require("./controllers/mysocial_controller.js")(app);
 
 //syncing our sequlize models and then starting our express app
 db.sequelize.sync({force: true}).then(function(){
