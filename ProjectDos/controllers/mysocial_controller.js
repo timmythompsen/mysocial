@@ -33,9 +33,8 @@ function getAllFeeds() {
 
 // Routes
 // =============================================================
-//module.exports = function(app) {
+module.exports = function(app) {
 
-  exports.app = function(app) {
 
   // Route to get landing page
   app.get("/", function(req, res) {
