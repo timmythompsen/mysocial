@@ -102,6 +102,8 @@ window.onload=(function() {
   // add real time listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
+
+      // store values to session storage
       console.log(firebaseUser);
       sessionStorage.setItem("UniqueID",firebaseUser.uid);
       console.log("Unique Id (sessionStorage: UniqueID): " + sessionStorage.getItem("UniqueID"));
@@ -111,11 +113,6 @@ window.onload=(function() {
       sessionStorage.setItem("FaceBookID",txtFBName.value);
       sessionStorage.setItem("InstaID",txtInstagramName.value);
         
-      // sessionStorage.setItem("TwitterID",txtTwitterName.value);
-      // console.log("TwitterName (sessionStorage: TwitterID): " + sessionStorage.getItem("TwitterID"));      
-      // var favorite=database.ref("/userSpots/"+ sessionStorage.getItem("UniqueID")+"/");
-      // console.log(favorite);
-      // btnLogout.classList.remove('hide');
       nbBtnLogout.classList.remove('hide');
       nbUpdateFeeds.classList.remove('hide');
       nbBtnLogin.classList.add('hide');
@@ -131,6 +128,14 @@ window.onload=(function() {
       }
     } else {
       console.log('not logged in'); 
+
+      // clear session storage
+      sessionStorage.setItem("UniqueID","");
+      sessionStorage.setItem("UserID","");
+      sessionStorage.setItem("TwitterID","");
+      sessionStorage.setItem("FaceBookID","");
+      sessionStorage.setItem("InstaID","");
+
       nbBtnLogout.classList.add('hide');
       nbUpdateFeeds.classList.add('hide');
       nbBtnLogin.classList.remove('hide');

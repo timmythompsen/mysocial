@@ -91,6 +91,10 @@ function findUser(event) {
     console.log('post result: ', data);
     console.log('post successful');
     console.log('twitter id ',data[0].twitter_name);
+
+    // store values from mySql to session storage
+    // UniqueID and UserID are stored to sessionStorage
+    // from the Firebase API
     sessionStorage.setItem("TwitterID",data[0].twitter_name);
     sessionStorage.setItem("FaceBookID",data[0].facebook_name);
     sessionStorage.setItem("InstaID",data[0].insta_name);
