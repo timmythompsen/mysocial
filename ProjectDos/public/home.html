@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <!--<link rel="stylesheet" type="text/css" href="/stylesheets/modals.css">-->
+    <link rel="stylesheet" type="text/css" href="css/modals.css">
   
 </head>
 <body>
-    <nav class="navbar navbar-fixed-top">
+<!--     <nav class="navbar navbar-fixed-top">
         <div class="content-padding">
             <h1>MySocial</h1>
             <ul class="nav navbar-nav navbar-right">
@@ -33,11 +33,42 @@
                 <li><a href="/">Login</a></li>
             </ul>
         </div>
-    </nav>    
+    </nav> -->    
 
     <div id="homepage-image">
         <h1 id="logo"><MySocial></h1>
-    </div>    
+    </div> 
+
+    <hr>
+
+    <div id="nav-div"><!-- start nav-div/login button -->
+      <nav>
+        <ul class="nav nav-pills">
+         
+          <li class="nav-item" id="loggedInAs"> 
+          </li>
+          <button id="nbBtnLogin" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
+            <span class="glyphicon glyphicon-log-in" my-2 my-sm-0></span> Login
+          </button> <!-- Login Button -->
+          <button id="nbBtnSignUp" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
+              <span class="glyphicon glyphicon-collapse-up" my-2 my-sm-0></span> Sign-up
+          </button>   <!-- Sign Up Button -->                 
+          <button id="nbBtnLogout" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">
+            <span class="glyphicon glyphicon-log-out" my-2 my-sm-0></span> Logout
+          </button>    <!-- Logout  Button -->
+
+          <button id="nbUpdateFeeds" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">            
+            <span class="glyphicon glyphicons-list-alt" my-2 my-sm-0></span> Update Feeds
+          </button> <!-- update feeds button -->
+
+<!--         <form id="search-form" class="form-inline my-2 my-lg-0">
+          <input id="searchval" class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+        </ul>
+      </nav>
+    </div><!-- close nav-div/login button -->
+
     <hr>
     <div id="command-center">
         <h1><center>My Feeds</center></h1>
@@ -69,11 +100,42 @@
 
         </div>
     </div>
-</footer>                        
+</footer> 
+
+<div id="myModal" class="modal"><!-- Login Modal -->
+<div class="modal-content">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+  </div>
+      <input class="input" id="txtEmail" type="email" placeholder="Email">
+      <input class="input" id="txtPassword" type="password" placeholder="Password">
+      <div class="buttons">
+        <button id="btnLogin" class="btn btn-secondary">Log In</button>
+      </div>
+  </div>
+</div><!-- end login modal -->
+
+<div id="signUpModal" class="modal"><!-- Signup Modal -->
+<div class="modal-content">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+  </div>
+      <input class="input" id="txtEmail2" type="email" placeholder="Email">
+      <input class="input" id="txtPassword2" type="password" placeholder="Password">
+      <input class="input" id="txtDispName" type="name" placeholder="Display Name">
+      <input class="input" id="txtTwitterName" type="socialName" placeholder="Twitter Name">  
+      <input class="input" id="txtFBName" type="socialName" placeholder="Facebook Name">
+      <input class="input" id="txtInstagramName" type="socialName" placeholder="Instagram Name">                  
+      <div class="buttons">
+        <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+        </div>
+  </div>
+</div><!-- end signup modal -->                          
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="../../public/js/firebase.js"></script> 
-<script src="../../public/js/auth.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="javascript/firebase.js"></script> 
+<script src="javascript/auth.js"></script> 
 </html>
