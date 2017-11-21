@@ -67,7 +67,7 @@ function insertUser(event) {
   // event.preventDefault();
   var user = {
     name: txtDispName.value,
-    email: txtEmail.value,
+    email: txtEmail2.value,
     facebook_name: txtFBName.value,
     twitter_name: txtTwitterName.value,
     insta_name: txtInstagramName.value
@@ -90,7 +90,12 @@ function findUser(event) {
   $.get("/api/users/"+id, function(data) {
     console.log('post result: ', data);
     console.log('post successful');
-  })
+    console.log('twitter id ',data[0].twitter_name);
+    sessionStorage.setItem("TwitterID",data[0].twitter_name);
+    sessionStorage.setItem("FaceBookID",data[0].facebook_name);
+    sessionStorage.setItem("InstaID",data[0].insta_name);
+  
+  });
   
 };
 
