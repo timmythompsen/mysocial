@@ -120,8 +120,9 @@ Login Info Styling
     width: 100%;
   }
   #nav-div{
-    background-color: #000000;
+    background-color: white;
   }
+
   #search-form{
     float: right;
     margin-top: 3px;
@@ -143,6 +144,15 @@ Login Info Styling
     box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
     border: 3px solid rgba(72, 181, 233, 0.6);
     border-radius: 2px 2px 0 0;
+  }
+
+
+  /*for Login and Sign-up*/
+  .nav-item {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
   }
 
   /*h1{

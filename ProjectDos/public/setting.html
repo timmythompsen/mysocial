@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-  	<meta charset="utf-8">
+  
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,26 +19,51 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <!--<link rel="stylesheet" type="text/css" href="/stylesheets/modals.css">-->
-
-
-
+    <link rel="stylesheet" type="text/css" href="css/modals.css">
+  
 </head>
-
 <body>
-	<nav class="navbar navbar-fixed-top">
-		<div class="content-padding">
-			<a href="index.html"><img class="img-responsive2"       
-           	src="images/logo5.png" style="width: 200px; height: 50px"></a>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="home.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
+    <div id="nav-div"><!-- start nav-div/login button -->
+      <center><img src="images/logo6.png" alt="logo" style="width:300px;height:50px"></center>
+      <nav>
+        <ul class="nav nav-pills">   
+          <li class="nav-item" id="loggedInAs"> 
+          </li>
+          <button id="nbBtnLogin" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
+          <span class="glyphicon glyphicon-log-in" my-2 my-sm-0></span> Login
+          </button> <!-- Login Button -->
+          
+          <button id="nbBtnSignUp" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
+          <span class="glyphicon glyphicon-collapse-up" my-2 my-sm-0></span> Sign-up
+          </button>   <!-- Sign Up Button -->                 
+          
+          <button id="nbBtnLogout" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">
+          <span class="glyphicon glyphicon-log-out" my-2 my-sm-0></span> Logout
+          </button>    <!-- Logout  Button -->
+
+          <button id="nbUpdateFeeds" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">            
+          <span class="glyphicon glyphicons-list-alt" my-2 my-sm-0></span> Update Feeds
+          </button> <!-- update feeds button -->
+          <!--<form id="search-form" class="form-inline my-2 my-lg-0">
+          <input id="searchval" class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </ul>
+      </nav>
+    </div><!-- close nav-div/login button -->
+
+
+    <!--2nd Nav for Home and Settings-->
+    <nav class="navbar navbar-fixed-top">
+        <div class="content-padding">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="home.html">Home</a></li>
                 <li><a href="setting.html">Settings</a></li>
-			</ul>
-		</div>
-	</nav>	
+            </ul>
+        </div>
+    </nav> 
 
 	<div id="homepage-image">
 	</div>
