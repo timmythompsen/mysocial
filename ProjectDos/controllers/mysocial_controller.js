@@ -72,7 +72,6 @@ function getAllFeeds() {
       }
     }).then(function(dbpost){
       res.json(dbpost);
-      console.log('find 1 ', dbpost);
     })
     // Add sequelize code to find a single post where the id is equal to req.params.id,
     // return the result to the user with res.json
