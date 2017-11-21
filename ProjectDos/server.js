@@ -21,8 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-
-
+// add routes file
 require("./controllers/mysocial_controller.js")(app);
 
 //syncing our sequlize models and then starting our express app
