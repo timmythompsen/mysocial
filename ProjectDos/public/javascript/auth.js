@@ -107,6 +107,10 @@ window.onload=(function() {
       console.log("Unique Id (sessionStorage: UniqueID): " + sessionStorage.getItem("UniqueID"));
       sessionStorage.setItem("UserID",firebaseUser.email);
       console.log("User email/login (sessionStorage: UserID): " + sessionStorage.getItem("UserID"));
+      sessionStorage.setItem("TwitterID",txtTwitterName.value);
+      sessionStorage.setItem("FaceBookID",txtFBName.value);
+      sessionStorage.setItem("InstaID",txtInstagramName.value);
+        
       // sessionStorage.setItem("TwitterID",txtTwitterName.value);
       // console.log("TwitterName (sessionStorage: TwitterID): " + sessionStorage.getItem("TwitterID"));      
       // var favorite=database.ref("/userSpots/"+ sessionStorage.getItem("UniqueID")+"/");

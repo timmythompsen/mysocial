@@ -94,7 +94,7 @@ function findUser(event) {
     sessionStorage.setItem("TwitterID",data[0].twitter_name);
     sessionStorage.setItem("FaceBookID",data[0].facebook_name);
     sessionStorage.setItem("InstaID",data[0].insta_name);
-  
+    
   });
   
 };
