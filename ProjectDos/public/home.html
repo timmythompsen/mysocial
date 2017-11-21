@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   
-    <meta charset="utf-8">
+       <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <link rel="stylesheet" type="text/css" href="css/modals.css">
   
@@ -54,21 +54,19 @@
 
     <nav class="navbar navbar-fixed-top">
         <div class="content-padding">
-            <a href="index.html"><img class="img-responsive2" src="images/logo5.png" style="width:200px; height: 50px"></a>
-            
+            <h1>MySocial</h1>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="setting.html">Settings</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Login</a></li>
             </ul>
         </div>
     </nav>    
 
     <div id="homepage-image">
-     
-    </div>    
+
+    </div> 
     <hr>
-    
+
     <div id="command-center">
         <h1><center>My Feeds</center></h1>
         <center><img src="images/example.png" alt="feed img" style="width: 1200px; height: 1000px"></center>
@@ -85,7 +83,7 @@
         <!--footer copy-->
     <div class="footer-content">
         <p>Copyright &copy; Brian, Tim & Gail</p>
-        <p>MySocial is a social media management tool that allows users to view and post updates to a page or profile for Facebook, Twitter, LinkedIn and Instagram from one place, the MySocial dashboard. So when it comes to managing several profiles at once, MySocial can be a big help.</p>
+        <p>MySocial was created ...lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat animi sed eaque labore reiciendis nobis ipsum alias accusantium, error odit, distinctio vitae eum, magnam sint quasi. Officiis veniam, vitae consequuntur.</p>
 
         <div class="social-media-icons">
                 <a href="https://www.linkedin.com/in/jbrianhafner/" target="blank">
@@ -99,11 +97,42 @@
 
         </div>
     </div>
-</footer>                        
+</footer> 
+
+<div id="myModal" class="modal"><!-- Login Modal -->
+<div class="modal-content">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+  </div>
+      <input class="input" id="txtEmail" type="email" placeholder="Email">
+      <input class="input" id="txtPassword" type="password" placeholder="Password">
+      <div class="buttons">
+        <button id="btnLogin" class="btn btn-secondary">Log In</button>
+      </div>
+  </div>
+</div><!-- end login modal -->
+
+<div id="signUpModal" class="modal"><!-- Signup Modal -->
+<div class="modal-content">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+  </div>
+      <input class="input" id="txtEmail2" type="email" placeholder="Email">
+      <input class="input" id="txtPassword2" type="password" placeholder="Password">
+      <input class="input" id="txtDispName" type="name" placeholder="Display Name">
+      <input class="input" id="txtTwitterName" type="socialName" placeholder="Twitter Name">  
+      <input class="input" id="txtFBName" type="socialName" placeholder="Facebook Name">
+      <input class="input" id="txtInstagramName" type="socialName" placeholder="Instagram Name">                  
+      <div class="buttons">
+        <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+        </div>
+  </div>
+</div><!-- end signup modal -->                          
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="../../public/js/firebase.js"></script> 
-<script src="../../public/js/auth.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="javascript/firebase.js"></script> 
+<script src="javascript/auth.js"></script> 
 </html>
