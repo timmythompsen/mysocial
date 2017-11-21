@@ -9,21 +9,12 @@ var fs = require('mz/fs');
 var client = new Twitter(Keys.twitterKeys);
 
 
-//comment out 13 and 15 for testing
-//getFavTweets();
 
-//module.exports = getFavTweets;
-
-
-
-
-
-// for test
 
 exports.getFavTweets = function(){
 
 
-//function getFavTweets() {
+function getFavTweets() {
 	var params = {screen_name: 'HafnerTest', count:20};
 	// console.log("before client get");
 	client.get('favorites/list', params,function(error, tweets, response) {
