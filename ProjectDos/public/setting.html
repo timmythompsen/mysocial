@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-  	<meta charset="utf-8">
+  
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,65 +19,88 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <!--<link rel="stylesheet" type="text/css" href="/stylesheets/modals.css">-->
-
-
-
+    <link rel="stylesheet" type="text/css" href="css/modals.css">
+  
 </head>
-
 <body>
-	<nav class="navbar navbar-fixed-top">
-		<div class="content-padding">
-			<a href="index.html"><img class="img-responsive2"       
-           	src="images/logo5.png" style="width: 200px; height: 50px"></a>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="home.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="setting.html">Settings</a></li>
-			</ul>
-		</div>
-	</nav>	
+    <div id="nav-div"><!-- start nav-div/login button -->
+        <!-- Logo -->
+        <center><img src="images/logo6.png" alt="logo" style="width:300px;height:50px;padding:8px;margin-top:5px"></center>
+      
+      <nav>
+        <ul class="nav nav-pills">   
+          <!-- Logedin As text -->
+          <li class="nav-item" id="loggedInAs"></li>
 
-	<div id="homepage-image">
-	</div>
-	<hr>
-	<div id="command-center">
-		
-	</div>
+          <!-- Login Button -->
+          <!-- <button id="nbBtnLogin" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
+          <span class="glyphicon glyphicon-log-in" my-2 my-sm-0></span> Login
+          </button>  -->
+          
+          <!-- Sign Up Button --> 
+          <!-- <button id="nbBtnSignUp" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
+          <span class="glyphicon glyphicon-collapse-up" my-2 my-sm-0></span> Sign-up
+          </button>    -->              
+          
+          <!-- Logout  Button -->
+          <button id="nbBtnLogout" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">
+          <span class="glyphicon glyphicon-log-out" my-2 my-sm-0></span> Logout
+          </button>   
+          
+          <!-- Update Button -->
+          <button id="nbUpdateFeeds" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">            
+          <span class="glyphicon glyphicon-refresh" my-2 my-sm-0></span> Update Feeds
+          </button> 
+       
+          <!-- Home button -->
+          <button id="nbHome" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0">  <a href="home.html">        
+          <span class="glyphicon glyphicon-home" my-2 my-sm-0></span> Home
+          </button></a>
 
-	
+          <!-- Settings button -->
+          <!-- <button id="nbSetting" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0"> <a href="setting.html">      
+          <span class="glyphicon glyphicon-user" my-2 my-sm-0></span> Settings</button></a> -->
+        </ul>   
+    </nav>
+
+    </div><!-- close nav-div/login button -->
+    
+    <!--this is the home page top image-->
+    <div id="homepage-image"></div>
+
+	<!-- start of change settings form -->
   	<form class="form">
 	  <h2>Change your MySocial user settings here</h2>
 	  	<div class="form-group">
-		  <label for="email">First Name:</label>
-		  <div class="relative">
-			  <input class="form-control" id="name" type="text" pattern="[a-zA-Z\s]+" required="" autofocus="" title="Username should only contain letters. e.g. Gail McFadden" autocomplete="" placeholder="Confirm your first name here...">
-			  <i class="fa fa-user"></i>
-		  </div>
+			<label for="email">First Name:</label>
+		  	<div class="relative">
+			  	<input class="form-control" id="name" type="text" pattern="[a-zA-Z\s]+" required="" autofocus="" title="Username should only contain letters. e.g. Gail McFadden" autocomplete="" placeholder="Confirm your first name here...">
+			  	<i class="fa fa-user"></i>
+		  	</div>
 	  	</div>
 		<div class="form-group">
-		  <label for="email">Last Name:</label>
-		  <div class="relative">
-			  <input class="form-control" id="name" type="text" pattern="[a-zA-Z\s]+" required="" autofocus="" title="Username should only contain letters. e.g. Gail McFadden" autocomplete="" placeholder="Confirm your last name here...">
-			  <i class="fa fa-user"></i>
+		  	<label for="email">Last Name:</label>
+		  	<div class="relative">
+			  	<input class="form-control" id="name" type="text" pattern="[a-zA-Z\s]+" required="" autofocus="" title="Username should only contain letters. e.g. Gail McFadden" autocomplete="" placeholder="Confirm your last name here...">
+			  	<i class="fa fa-user"></i>
 		  </div>
 	  	</div>
 		<div class="form-group">
 	  		<label for="email">Email address:</label>
 	  		<div class="relative">
 		  		<input class="form-control" type="email" required="" placeholder="Type your email address..." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-		  	<i class="fa fa-envelope"></i>
+		  		<i class="fa fa-envelope"></i>
+	  		</div>
 	  	</div>
-	  </div>
-	  <div class="form-group">
-	  	<label for="email">MySocial Password:</label>
-	  	<div class="relative">
-	  		<input class="form-control" type="text" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required="" placeholder="Type your new password here...">
-	  		<i class="fa fa-key"></i>
+	  	<div class="form-group">
+	  		<label for="email">MySocial Password:</label>
+	  		<div class="relative">
+	  			<input class="form-control" type="text" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required="" placeholder="Type your new password here...">
+	  			<i class="fa fa-key"></i>
+	  		</div>
 	  	</div>
-	  </div>
 		<div class="form-group">
 	  		<label for="email">Interest 1:</label>
 	  		<div class="relative">
@@ -98,42 +122,48 @@
 	  			<i class="fa fa-tag"></i>
 	  		</div>
 	  	</div>
-
-	  <div class="form-group">
+	  	<div class="form-group">
 			<label for="email">Profile Image:</label>
-	  	<div class="relative">
-	  		<div class="input-group">
-          <label class="input-group-btn">
-            <span class="btn btn-default">
-                Browse&hellip; <input type="file" style="display: none;" multiple>
-            </span>
-          </label>
-          <input type="text" class="form-control" required="" placeholder="Attachment..." readonly>
-          <i class="fa fa-link"></i>
-      	</div>
+	  		<div class="relative">
+	  			<div class="input-group">
+          			<label class="input-group-btn">
+            		<span class="btn btn-default">
+                	Browse&hellip; <input type="file" style="display: none;" multiple>
+            		</span>
+          			</label>
+          			<input type="text" class="form-control" required="" placeholder="Attachment..." readonly>
+          			<i class="fa fa-link"></i>
+      			</div>
+	  		</div>
 	  	</div>
-	  </div>
 	  <h2>Update your social network logins here</h2>
-	  <div class="form-group">
-	  	<label for="email">Facebook:</label>
-	  	<div class="relative">
-	  		<input class="form-control" type="url" pattern="https?://.+" required="" placeholder="Update your Facebook login id here...">
-	  		<i class="fa fa-facebook-square"></i>
+	  	<div class="form-group">
+	  		<label for="email">Facebook:</label>
+	  		<div class="relative">
+	  			<input class="form-control" type="url" pattern="https?://.+" required="" placeholder="Update your Facebook login id here...">
+	  			<i class="fa fa-facebook-square"></i>
+	  		</div>
 	  	</div>
-	  </div>
-	  <div class="form-group">
-	  	<label for="email">Twitter:</label>
-	  	<div class="relative">
-	  	<input class="form-control" type="url" pattern="https?://.+" required="" placeholder="Update your Twitter login id here...">
-	  	<i class="fa fa-twitter-square"></i>
-	  </div>	
-	  </div>
+	  	<div class="form-group">
+	  		<label for="email">Twitter:</label>
+	  		<div class="relative">
+	  			<input class="form-control" type="url" pattern="https?://.+" required="" placeholder="Update your Twitter login id here...">
+	  			<i class="fa fa-twitter-square"></i>
+	  		</div>	
+	  	</div>	
 		<div class="form-group">
 			<label for="email">Instagram:</label>
-	  	<div class="relative">
-	  		<input class="form-control" type="url" pattern="https?://.+" required="" placeholder="Update your Instagram login id here...">
-	  		<i class="fa fa-instagram"></i>
+	  		<div class="relative">
+	  			<input class="form-control" type="url" pattern="https?://.+" required="" placeholder="Update your Instagram login id here...">
+	  			<i class="fa fa-instagram"></i>
+	  		</div>	
 	  	</div>
+		<div class="form-group">
+			<label for="email">LinkedIn:</label>
+	  		<div class="relative">
+	  			<input class="form-control" type="url" pattern="https?://.+" required="" placeholder="Update your LinkedIn login id here...">
+	  			<i class="fa fa-instagram"></i>
+	  		</div>
 	  </div>
 		
 	   <!--Reset and Submit buttons-->           	
@@ -150,31 +180,30 @@
 
 
 <footer>
-		<!--banner ad-->
-	<div class="content-padding">
-		<div>
-			<a href="https://wordpress.com/" target="blank">
-  			<img src="images/bannerAd.png" alt="banner ad" style="width:1000px;height:90px"></a>
-		</div>
-	<hr>
-		<!--footer copy-->
-	<div class="footer-content">
-		<p>Copyright &copy; Brian, Tim & Gail</p>
-		<p>MySocial is a social media management tool that allows users to view and post updates to a page or profile for Facebook, Twitter, LinkedIn and Instagram from one place, the MySocial dashboard. So when it comes to managing several profiles at once, MySocial can be a big help.</p>
+        <!--banner ad-->
+    <div class="content-padding">
+        <div>
+            <a href="https://wordpress.com/" target="blank">
+              <img src="images/bannerAd.png" alt="banner ad" style="width:1000px;height:90px"></a>
+        </div>
+    <hr>
+        <!--footer copy-->
+    <div class="footer-content">
+        <p>Copyright &copy; Brian, Tim & Gail</p>
+        <p>MySocial is a social media management tool that allows users to view and post updates to a page or profile for Facebook, Twitter, LinkedIn, and Instagram platforms. Now more than ever, managing an individual's social media presence can be time consuming!  So when it comes to managing several profiles at once, MySocial can be a big help.</p>
 
-		<div class="social-media-icons">
-				<a href="https://www.linkedin.com/in/jbrianhafner/" target="blank">
-  				<img src="images/brian2.png" alt="brian" style="width:35px;height:40px;"></a>
+        <div class="social-media-icons">
+                <a href="https://www.linkedin.com/in/jbrianhafner/" target="blank">
+                  <img src="images/brian2.png" alt="brian" style="width:35px;height:40px;"></a>
 
-  				<a href="https://www.linkedin.com/in/timothythompsen/" target="blank">
-  				<img src="images/tim2.png" alt="tim" style="width:35px;height:40px;"></a>
+                 <a href="https://www.linkedin.com/in/timothythompsen/" target="blank">
+                  <img src="images/tim2.png" alt="tim" style="width:35px;height:40px;"></a>
 
-  				<a href="https://www.linkedin.com/in/gail-mcfadden-52117619/" target="blank">
-  				<img src="images/gail2.png" alt="gail" style="width:35px;height:40px"></a>
-
-		</div>
-	</div>
-</footer>						
+                 <a href="https://www.linkedin.com/in/gail-mcfadden-52117619/" target="blank">
+                  <img src="images/gail2.png" alt="gail" style="width:35px;height:40px"></a>
+        </div>
+    </div>
+</footer> 			
 
 
 <script src='https://code.jquery.com/jquery-1.12.4.js'></script>

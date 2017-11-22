@@ -62,13 +62,18 @@ Home Page Image / Title Styles
 /* ---------------------------------------
 Navbar and Navigation Styles / Overrides 
 ------------------------------------------ */
+.nav-div-img{
+    padding-top: 50px;
+}
+
+
 .navbar-fixed-top {
 	position: absolute;
-	padding-top: 10px;
+	padding-top: 50px;
 }
 
 .navbar-nav li a {
-	color: white;
+	color: black;
 	text-transform: uppercase;
 	letter-spacing: 0.3px;
 	font-size: 16px;

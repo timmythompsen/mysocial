@@ -1,37 +1,4 @@
-/*.jumbotron {
-    background-image: url("image1.jpg");
-    background-color: transparent;
-    min-height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 0px;
-    text-align: center;
-    color: white;
-    
-  }
-  .jumbotron h1{
-    font-size: 800%;
-  }
 
-  #map {
-    height: 100%;
-    margin: 0px;
-  }
-  html, body {
-    background-color: #7CDFEA;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .footer{
-    background-color: black;
-    text-align: center;
-    height: 5%;
-    font-family: 'Orbitron', sans-serif;
-  }*/
-  
   /*Login Modal Styling*/
   #myModal {
     margin: auto;
@@ -61,7 +28,7 @@
   }
   .modal-content {
     position: absolute;
-    top: 400px;
+    top: 200px;
     left: calc(40% - 250px);
     width: 500px;
     height: auto;
@@ -120,8 +87,9 @@ Login Info Styling
     width: 100%;
   }
   #nav-div{
-    background-color: #000000;
+    background-color: white;
   }
+
   #search-form{
     float: right;
     margin-top: 3px;
@@ -145,45 +113,63 @@ Login Info Styling
     border-radius: 2px 2px 0 0;
   }
 
-  /*h1{
-    padding: 0px;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
 
+  /*for Login and Sign-up*/
+  .nav-item {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
   }
 
-  h3{
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
+
+  a {
+    color: #5b5b5b;
   }
-  p{
-    margin-left: 10px;
-    font-family: 'Kanit', sans-serif;
-  }
-  div{
-    background-color: 868889;
-  }*/
 
   #loggedInAs {
-    color: white;
+    color: red;
+    font-size: 18px;
+    padding: 6px 12px 0px 12px;
   }
 
   #nbBtnLogin {
     margin-top: 3px;
+    font-size: 18px;
+    color: #5b5b5b;
   }
 
   #nbBtnSignUp {
     margin-top: 3px;
+    font-size: 18px;
+    color: #5b5b5b;
   }
 
   #nbBtnLogout {
     margin-top: 3px;
+    font-size: 18px;
+    color: #5b5b5b;
   }
   #nbUpdateFeeds {
     margin-top: 3px;
+    font-size: 18px;
+    color: #5b5b5b;
   }
+
+  #nbHome {
+    margin-top: 3px;
+    font-size: 18px;
+    color: #5b5b5b;
+  }
+
+  #nbSetting {
+    margin-top: 3px;
+    font-size: 18px;
+    color: #5b5b5b;
+  }
+
+
+
   .btn-static{
     margin-top: 3px;
   }
