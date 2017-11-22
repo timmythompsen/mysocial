@@ -62,6 +62,11 @@ Home Page Image / Title Styles
 /* ---------------------------------------
 Navbar and Navigation Styles / Overrides 
 ------------------------------------------ */
+.nav-div-img{
+    padding-top: 50px;
+}
+
+
 .navbar-fixed-top {
 	position: absolute;
 	padding-top: 50px;
