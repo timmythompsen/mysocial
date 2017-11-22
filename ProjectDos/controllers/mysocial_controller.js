@@ -5,10 +5,10 @@ var Request = require('request-promise');
 var fs = require('mz/fs');
 var Twitter = require('twitter');
 var Keys = require('../controllers/keys.js');
-
+var FB = require('fb');
 
 var client = new Twitter(Keys.twitterKeys);
-
+FB.setAccessToken('access_token');
 
 // Routes
 // =============================================================
@@ -26,6 +26,17 @@ module.exports = function(app) {
       res.json(data);
     });
   });
+
+  app.get("/api/users/:id", function(req, res) {
+    var id = req.params.id;
+    db.User.findAll({
+      where: {
+        email : id
+      }
+    }).then(function(dbpost){
+      res.json(dbpost);
+    })
+   }); 
   
   app.get("/api/twitter/:id", function(req, res) {
     var id = req.params.id;
@@ -50,19 +61,19 @@ module.exports = function(app) {
   app.get("/api/facebook/:id", function(req, res) {
     var id = req.params.id;
     db.User.findAll({
-      where: {
-        email : id
-      }
+      //where: {
+        //email : id
+      //}
     }).then(function(dbpost) {
-      var twitterID=dbpost.twitterID;
-      var params = {screen_name: twitterID, count:20};
-      client.get('favorites/list', params,function(error, tweets, response) {
-        if (!error) {
-              res.json(tweets);
-            
-        } else {
-          console.log("error");
-          }
+      var fbID=dbpost.FaceBookID;
+      FB.api('4', function (data) {
+        if(!data || data.error) {
+         console.log(!data ? 'error occurred' : data.error);
+         return;
+        }
+        console.log(data.id);
+        console.log(data.name);
+        res.json(data);
       });
     });
    }); 
