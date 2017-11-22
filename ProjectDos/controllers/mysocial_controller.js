@@ -1,35 +1,14 @@
 var express = require('express');
 var db = require('../models');
 var path = require("path");
-var Keys = require('./keys.js');
-var Twitter = require('twitter');
 var Request = require('request-promise');
 var fs = require('mz/fs');
+var Twitter = require('twitter');
+var Keys = require('../controllers/keys.js');
+
 
 var client = new Twitter(Keys.twitterKeys);
 
-function getFavTweets() {
-	var params = {screen_name: 'HafnerTest', count:20};
-	// console.log("before client get");
-	client.get('favorites/list', params,function(error, tweets, response) {
-	 	if (!error) {
-		    	console.log("\n\n" + "MY MOST FAVORITE TWEETS");
-			    for (var i=0; i<tweets.length; i++) {
-			    	console.log(`Tweet ${i+1}. posted by ${tweets[i].user.name.underline} at ${tweets[i].created_at} `);
-					console.log(`Tweet Text: ${tweets[i].text}`);
-					console.log(`=============================`);
-				}
-		} else {
-			console.log("error");
-			}
-	});
-};
-
-// Function to get feeds
-function getAllFeeds() {
-  getFavTweets();
-  // get FB, Instagram, etc functions go here
-};
 
 // Routes
 // =============================================================
@@ -47,34 +26,46 @@ module.exports = function(app) {
       res.json(data);
     });
   });
-  /*
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
-
-    db.Post.findAll({
-      where: {
-        category : req.params.category
-      }
-    }).then(function(dbpost){
-      res.json(dbpost);
-    })
-    // Add sequelize code to find all posts where the category is equal to req.params.category,
-    // return the result to the user with res.json
-  }); */
-
-  // Get route for retrieving a single user
-  app.get("/api/users/:id", function(req, res) {
+  
+  app.get("/api/twitter/:id", function(req, res) {
     var id = req.params.id;
     db.User.findAll({
       where: {
         email : id
       }
-    }).then(function(dbpost){
-      res.json(dbpost);
-    })
-    // Add sequelize code to find a single post where the id is equal to req.params.id,
-    // return the result to the user with res.json
-  }); 
+    }).then(function(dbpost) {
+      var twitterID=dbpost.twitterID;
+      var params = {screen_name: twitterID, count:20};
+      client.get('favorites/list', params,function(error, tweets, response) {
+        if (!error) {
+              res.json(tweets);
+            
+        } else {
+          console.log("error");
+          }
+      });
+    });
+   }); 
+
+  app.get("/api/facebook/:id", function(req, res) {
+    var id = req.params.id;
+    db.User.findAll({
+      where: {
+        email : id
+      }
+    }).then(function(dbpost) {
+      var twitterID=dbpost.twitterID;
+      var params = {screen_name: twitterID, count:20};
+      client.get('favorites/list', params,function(error, tweets, response) {
+        if (!error) {
+              res.json(tweets);
+            
+        } else {
+          console.log("error");
+          }
+      });
+    });
+   }); 
 
   // POST route for saving a new user - Brian 11/19/17 
   app.post("/api/users", function(req,res) {

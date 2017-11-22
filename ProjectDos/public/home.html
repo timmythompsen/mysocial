@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   
-       <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,64 +26,67 @@
 </head>
 <body>
     <div id="nav-div"><!-- start nav-div/login button -->
+<!-- Logo -->
+        <center><img src="images/logo6.png" alt="logo" style="width:300px;height:50px;padding:8px;margin-top:5px"></center>
+      
       <nav>
-        <ul class="nav nav-pills">
-         
-          <li class="nav-item" id="loggedInAs"> 
-          </li>
+        <ul class="nav nav-pills">   
+          <!-- Logedin As text -->
+          <li class="nav-item" id="loggedInAs"></li>
+
+          <!-- Login Button -->
           <button id="nbBtnLogin" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
-            <span class="glyphicon glyphicon-log-in" my-2 my-sm-0></span> Login
-          </button> <!-- Login Button -->
+          <span class="glyphicon glyphicon-log-in" my-2 my-sm-0></span> Login
+          </button> 
+          
+          <!-- Sign Up Button --> 
           <button id="nbBtnSignUp" type="button" class="nav-item btn btn-outline-success my-2 my-sm-0" type="submit">
-              <span class="glyphicon glyphicon-collapse-up" my-2 my-sm-0></span> Sign-up
-          </button>   <!-- Sign Up Button -->                 
+          <span class="glyphicon glyphicon-collapse-up" my-2 my-sm-0></span> Sign-up
+          </button>                 
+          
+          <!-- Logout  Button -->
           <button id="nbBtnLogout" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">
-            <span class="glyphicon glyphicon-log-out" my-2 my-sm-0></span> Logout
-          </button>    <!-- Logout  Button -->
-
+          <span class="glyphicon glyphicon-log-out" my-2 my-sm-0></span> Logout
+          </button>   
+          
+          <!-- Update Button -->
           <button id="nbUpdateFeeds" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0 hide">            
-            <span class="glyphicon glyphicons-list-alt" my-2 my-sm-0></span> Update Feeds
-          </button> <!-- update feeds button -->
-<!--         <form id="search-form" class="form-inline my-2 my-lg-0">
-          <input id="searchval" class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
-        </ul>
-      </nav>
+          <span class="glyphicon glyphicon-refresh" my-2 my-sm-0></span> Update Feeds
+          </button> 
+       
+          <!-- Home button -->
+          <button id="nbHome" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0">  <a href="home.html">        
+          <span class="glyphicon glyphicon-home" my-2 my-sm-0></span> Home
+          </button></a>
+
+          <!-- Settings button -->
+          <button id="nbSetting" type="Button" type="button" class="btn btn-outline-success my-2 my-sm-0"> <a href="setting.html">      
+          <span class="glyphicon glyphicon-user" my-2 my-sm-0></span> Settings</button></a>
+        </ul>   
+    </nav>
+
     </div><!-- close nav-div/login button -->
-
-<!--     <nav class="navbar navbar-fixed-top">
-        <div class="content-padding">
-            <h1>MySocial</h1>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Login</a></li>
-            </ul>
-        </div>
-    </nav>  -->   
-
-    <div id="homepage-image">
-
-    </div> 
-    <hr>
+    
+    <!--this is the home page top image-->
+    <div id="homepage-image"></div>
 
     <div id="command-center">
-        <h1><center>My Feeds</center></h1>
+        <h2><center>My Feeds</center></h2>
         <center><img src="images/example.png" alt="feed img" style="width: 1200px; height: 1000px"></center>
     </div>
 
 <footer>
-        <!--banner ad-->
+<!--banner ad-->
     <div class="content-padding">
         <div>
             <a href="https://wordpress.com/" target="blank">
               <img src="images/bannerAd.png" alt="banner ad" style="width:1000px;height:90px"></a>
         </div>
     <hr>
-        <!--footer copy-->
+<!--footer copy-->
     <div class="footer-content">
         <p>Copyright &copy; Brian, Tim & Gail</p>
-        <p>MySocial was created ...lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat animi sed eaque labore reiciendis nobis ipsum alias accusantium, error odit, distinctio vitae eum, magnam sint quasi. Officiis veniam, vitae consequuntur.</p>
+        <p>MySocial is a social media management tool that allows users to view and post updates to a page or profile for Facebook, Twitter, LinkedIn, and Instagram platforms. Now more than ever, managing an individual's social media presence can be time consuming!  So when it comes to managing several profiles at once, MySocial can be a big help.</p>
 
         <div class="social-media-icons">
                 <a href="https://www.linkedin.com/in/jbrianhafner/" target="blank">
@@ -94,12 +97,13 @@
 
                  <a href="https://www.linkedin.com/in/gail-mcfadden-52117619/" target="blank">
                   <img src="images/gail2.png" alt="gail" style="width:35px;height:40px"></a>
-
         </div>
     </div>
 </footer> 
 
-<div id="myModal" class="modal"><!-- Login Modal -->
+<!-- Login Modal -->
+
+<div id="myModal" class="modal">
 <div class="modal-content">
   <div class="modal-header">
     <span class="close">&times;</span>
@@ -110,9 +114,11 @@
         <button id="btnLogin" class="btn btn-secondary">Log In</button>
       </div>
   </div>
-</div><!-- end login modal -->
+</div>
 
-<div id="signUpModal" class="modal"><!-- Signup Modal -->
+<!-- Signup Modal -->
+
+<div id="signUpModal" class="modal">
 <div class="modal-content">
   <div class="modal-header">
     <span class="close">&times;</span>
@@ -120,14 +126,15 @@
       <input class="input" id="txtEmail2" type="email" placeholder="Email">
       <input class="input" id="txtPassword2" type="password" placeholder="Password">
       <input class="input" id="txtDispName" type="name" placeholder="Display Name">
-      <input class="input" id="txtTwitterName" type="socialName" placeholder="Twitter Name">  
-      <input class="input" id="txtFBName" type="socialName" placeholder="Facebook Name">
-      <input class="input" id="txtInstagramName" type="socialName" placeholder="Instagram Name">                  
+      <input class="input" id="txtTwitterName" type="socialName" placeholder="Twitter Id">  
+      <input class="input" id="txtFBName" type="socialName" placeholder="Facebook Id">
+      <input class="input" id="txtInstagramName" type="socialName" placeholder="Instagram Id">  
+      <input class="input" id="txtLinkedInName" type="socialName" placeholder="LinkedIn Id">               
       <div class="buttons">
-        <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
-        </div>
+      <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+      </div>
   </div>
-</div><!-- end signup modal -->                          
+</div>                        
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
