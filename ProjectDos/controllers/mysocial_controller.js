@@ -83,12 +83,45 @@ module.exports = function(app) {
     console.log(req.body);
     db.User.create({
       name: req.body.name,
+      name_last: req.body.name_last,
+      name_first: req.body.name_first,  
       email: req.body.email,
       facebook_name: req.body.facebook_name,
       twitter_name: req.body.twitter_name,
-      insta_name: req.body.insta_name
+      insta_name: req.body.insta_name,
+      li_name: req.body.li_name,
+      interest1: req.body.interest1,
+      interest2: req.body.interest2,
+      interest3: req.body.interest3
     }).then(function(post){
       res.json(post);
+    });
+  });
+
+  // UPDATE route for updating user - Brian 11/23/17 
+  app.put("/api/users/:id", function(req,res) {
+    var id = req.params.id;    
+    console.log(req.body);
+    db.User.update({
+      name: req.body.name,
+      name_last: req.body.name_last,
+      name_first: req.body.name_first,  
+      facebook_name: req.body.facebook_name,
+      twitter_name: req.body.twitter_name,
+      insta_name: req.body.insta_name,
+      li_name: req.body.li_name,
+      interest1: req.body.interest1,
+      interest2: req.body.interest2,
+      interest3: req.body.interest3,
+      profile_pic: req.body.profile_pic
+    },{
+      where: {
+        email: id
+      },
+      returning: true,
+      plain: true
+    }).then(function(update){
+      res.json(update);
     });
   });
 

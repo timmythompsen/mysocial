@@ -130,11 +130,7 @@ window.onload=(function() {
       console.log('not logged in'); 
 
       // clear session storage
-      sessionStorage.setItem("UniqueID","");
-      sessionStorage.setItem("UserID","");
-      sessionStorage.setItem("TwitterID","");
-      sessionStorage.setItem("FaceBookID","");
-      sessionStorage.setItem("InstaID","");
+      sessionStorage.clear();
 
       nbBtnLogout.classList.add('hide');
       nbUpdateFeeds.classList.add('hide');
