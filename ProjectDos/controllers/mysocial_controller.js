@@ -27,7 +27,6 @@ module.exports = function(app) {
     });
   });
 
-    // Get route for retrieving a single user
   app.get("/api/users/:id", function(req, res) {
     var id = req.params.id;
     db.User.findAll({
@@ -38,7 +37,6 @@ module.exports = function(app) {
       res.json(dbpost);
     })
    }); 
-
   
   app.get("/api/twitter/:id", function(req, res) {
     var id = req.params.id;
