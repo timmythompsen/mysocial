@@ -1,40 +1,22 @@
 var express = require('express');
 var db = require('../models');
 var path = require("path");
-var Keys = require('./keys.js');
-var Twitter = require('twitter');
 var Request = require('request-promise');
 var fs = require('mz/fs');
+var Twitter = require('twitter');
+var Keys = require('../controllers/keys.js');
+var FB = require('fb');
 
 var client = new Twitter(Keys.twitterKeys);
-
-function getFavTweets() {
-	var params = {screen_name: 'HafnerTest', count:20};
-	// console.log("before client get");
-	client.get('favorites/list', params,function(error, tweets, response) {
-	 	if (!error) {
-		    	console.log("\n\n" + "MY MOST FAVORITE TWEETS");
-			    for (var i=0; i<tweets.length; i++) {
-			    	console.log(`Tweet ${i+1}. posted by ${tweets[i].user.name.underline} at ${tweets[i].created_at} `);
-					console.log(`Tweet Text: ${tweets[i].text}`);
-					console.log(`=============================`);
-				}
-		} else {
-			console.log("error");
-			}
-	});
-};
-
-// Function to get feeds
-function getAllFeeds() {
-  getFavTweets();
-  // get FB, Instagram, etc functions go here
-};
+FB.setAccessToken('access_token');
 
 // Routes
 // =============================================================
 module.exports = function(app) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46cfa00eef6c12f539e97c1ddc64044fa5e0b877
 
 
   // Route to get landing page
@@ -48,22 +30,7 @@ module.exports = function(app) {
       res.json(data);
     });
   });
-  /*
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
 
-    db.Post.findAll({
-      where: {
-        category : req.params.category
-      }
-    }).then(function(dbpost){
-      res.json(dbpost);
-    })
-    // Add sequelize code to find all posts where the category is equal to req.params.category,
-    // return the result to the user with res.json
-  }); */
-
-  // Get route for retrieving a single user
   app.get("/api/users/:id", function(req, res) {
     var id = req.params.id;
     db.User.findAll({
@@ -72,23 +39,93 @@ module.exports = function(app) {
       }
     }).then(function(dbpost){
       res.json(dbpost);
-      console.log('find 1 ', dbpost);
     })
-    // Add sequelize code to find a single post where the id is equal to req.params.id,
-    // return the result to the user with res.json
-  }); 
+   }); 
+  
+  app.get("/api/twitter/:id", function(req, res) {
+    var id = req.params.id;
+    db.User.findAll({
+      where: {
+        email : id
+      }
+    }).then(function(dbpost) {
+      var twitterID=dbpost.twitterID;
+      var params = {screen_name: twitterID, count:20};
+      client.get('favorites/list', params,function(error, tweets, response) {
+        if (!error) {
+              res.json(tweets);
+            
+        } else {
+          console.log("error");
+          }
+      });
+    });
+   }); 
+
+  app.get("/api/facebook/:id", function(req, res) {
+    var id = req.params.id;
+    db.User.findAll({
+      //where: {
+        //email : id
+      //}
+    }).then(function(dbpost) {
+      var fbID=dbpost.FaceBookID;
+      FB.api('4', function (data) {
+        if(!data || data.error) {
+         console.log(!data ? 'error occurred' : data.error);
+         return;
+        }
+        console.log(data.id);
+        console.log(data.name);
+        res.json(data);
+      });
+    });
+   }); 
 
   // POST route for saving a new user - Brian 11/19/17 
   app.post("/api/users", function(req,res) {
     console.log(req.body);
     db.User.create({
       name: req.body.name,
+      name_last: req.body.name_last,
+      name_first: req.body.name_first,  
       email: req.body.email,
       facebook_name: req.body.facebook_name,
       twitter_name: req.body.twitter_name,
-      insta_name: req.body.insta_name
+      insta_name: req.body.insta_name,
+      li_name: req.body.li_name,
+      interest1: req.body.interest1,
+      interest2: req.body.interest2,
+      interest3: req.body.interest3
     }).then(function(post){
       res.json(post);
+    });
+  });
+
+  // UPDATE route for updating user - Brian 11/23/17 
+  app.put("/api/users/:id", function(req,res) {
+    var id = req.params.id;    
+    console.log(req.body);
+    db.User.update({
+      name: req.body.name,
+      name_last: req.body.name_last,
+      name_first: req.body.name_first,  
+      facebook_name: req.body.facebook_name,
+      twitter_name: req.body.twitter_name,
+      insta_name: req.body.insta_name,
+      li_name: req.body.li_name,
+      interest1: req.body.interest1,
+      interest2: req.body.interest2,
+      interest3: req.body.interest3,
+      profile_pic: req.body.profile_pic
+    },{
+      where: {
+        email: id
+      },
+      returning: true,
+      plain: true
+    }).then(function(update){
+      res.json(update);
     });
   });
 

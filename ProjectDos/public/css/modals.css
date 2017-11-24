@@ -131,6 +131,11 @@ Login Info Styling
     color: red;
     font-size: 18px;
     padding: 6px 12px 0px 12px;
+<<<<<<< HEAD
+=======
+    border 1px;
+    margin-top 3px;
+>>>>>>> 46cfa00eef6c12f539e97c1ddc64044fa5e0b877
   }
 
   #nbBtnLogin {

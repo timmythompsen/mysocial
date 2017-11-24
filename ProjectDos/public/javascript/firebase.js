@@ -60,42 +60,16 @@ window.onclick = function(event) {
     if (event.target == modalSignUp) {
         modalSignUp.style.display = "none";
     }
-}
-
-// This function inserts a new user into the DB
-function insertUser(event) {
-  // event.preventDefault();
-  var user = {
-    name: txtDispName.value,
-    email: txtEmail2.value,
-    facebook_name: txtFBName.value,
-    twitter_name: txtTwitterName.value,
-    insta_name: txtInstagramName.value
-  };
-
-  $.post("api/users", user, function(result) {
-    console.log('post result: ', result);
-    console.log('post successful');
-  });
-
 };
 
-// This function retrieves the current user's record
-function findUser(event) {
-  // event.stopPropagation();
-  var id = sessionStorage.getItem("UserID");
-  console.log('var id: ', id);
-  console.log("/api/users/"+id);
+// pops up alert with user info when going to setting page
+nbSetting.addEventListener('click', e=> {
+    console.log((sessionStorage.getItem("name_first")));    
+    document.location = "/setting.html";
+});
 
-  $.get("/api/users/"+id, function(data) {
-    console.log('post result: ', data);
-    console.log('post successful');
-    console.log('twitter id ',data[0].twitter_name);
-    sessionStorage.setItem("TwitterID",data[0].twitter_name);
-    sessionStorage.setItem("FaceBookID",data[0].facebook_name);
-    sessionStorage.setItem("InstaID",data[0].insta_name);
+
+
+
   
-  });
-  
-};
 

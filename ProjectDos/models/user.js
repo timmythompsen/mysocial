@@ -3,14 +3,22 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate: {
-      //   len: [3]
-      // }
+        validate: {
+          len: [3]
+      }
+    },
+    name_last: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    name_first: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     email: {
       type: DataTypes.TEXT,
       allowNull: false,
-      // len: [5]
+       len: [5]
     },
     facebook_name: {
       type: DataTypes.STRING
@@ -20,7 +28,22 @@ module.exports = function(sequelize, DataTypes) {
     },
     insta_name: {
       type: DataTypes.STRING
-    }
+    },
+    li_name: {
+      type: DataTypes.STRING
+    },
+    interest1: {
+      type: DataTypes.STRING
+    },
+    interest2: {
+      type: DataTypes.STRING
+    },
+    interest3: {
+      type: DataTypes.STRING
+    },
+    profile_pic: {
+      type: DataTypes.STRING
+    }        
   });
   return User;
 };
