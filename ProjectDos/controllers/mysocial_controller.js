@@ -125,6 +125,17 @@ module.exports = function(app) {
     });
   });
 
+  app.delete("/api/users/:id", function(req,res) {
+    var id=req.params.id;
+    db.User.destroy({
+      where : {
+        email: id 
+      }
+    }).then(function(data) {
+      res.json(data);
+    });
+  }); 
+
   /* // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
 
