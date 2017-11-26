@@ -42,7 +42,7 @@ function updateUser(event) {
   $.put("/api/users/"+id, user, function(result) {
     console.log('update result: ', result);
     console.log('update successful');
-  })  
+  });  
 }
 
 // This function retrieves the current user's record

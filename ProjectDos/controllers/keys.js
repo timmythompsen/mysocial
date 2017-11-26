@@ -8,7 +8,9 @@ exports.twitterKeys = {
 }
 
 exports.facebookKeys = {
-	
+	clientID : '132770574103786',
+	clientSecret: '11fe0201e830f2a29d18d45f54cf1ef1',
+	callbackURL: 'http://localhost:3000/auth/facebook/callback'
 }
 
 exports.instaKeys = {
