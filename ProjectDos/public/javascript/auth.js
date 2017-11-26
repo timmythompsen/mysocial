@@ -96,7 +96,10 @@ window.onload=(function() {
 
   nbUpdateFeeds.addEventListener('click', e=> {
     console.log("nbUpdateFeeds clicked");
-    getAllFeeds();
+    //getAllFeeds();
+    $.get("/auth/facebook", function(data) {
+      console.log("fb auth");
+    });
   });
 
   // add real time listener
