@@ -86,6 +86,12 @@ app.get('/auth/facebook/callback',
   app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { successRedirect: '/',
                                         failureRedirect: '/' }));
+
+
+
+
+
+
 passport.use(new FacebookStrategy(Keys.facebookKeys, 
   function(accessToken, refreshToken, profile, done) {
     process.nextTick(function(){
@@ -101,6 +107,9 @@ passport.use(new FacebookStrategy(Keys.facebookKeys,
           newUser.name_first = profile.name.givenName 
           newUser.name_last = profile.name.familyName;
           newUser.email = profile.emails[0].value;
+
+
+
           newUSer.save(function(err){
             if (err) {
               throw err;
@@ -108,7 +117,11 @@ passport.use(new FacebookStrategy(Keys.facebookKeys,
             return done(null,newUser);
           });
         }
+
+
       }
+
+
     });
   }));*/
 
