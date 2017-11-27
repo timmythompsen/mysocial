@@ -27,13 +27,13 @@ $(function() {
 //thank you
 
 $('form').submit(function(){
-	$('.thanks').show();
-	$('.thanks').delay(2000).fadeOut();
-	window.setInterval(function() {
-	 	window.location.reload();
-	 	$('form input#name').focus();
-		}, 2500);
-	event.preventDefault(); 
+  $('.thanks').show();
+  $('.thanks').delay(2000).fadeOut();
+  window.setInterval(function() {
+    window.location.reload();
+    $('form input#name').focus();
+    }, 2500);
+  event.preventDefault(); 
 });
 
 // updates data in db on click of setting.html/stgSubmit
@@ -58,7 +58,3 @@ $(document).ready(function() {
   $("#stgNameInsta").val(sessionStorage.getItem("InstaID"));
   $("#stgNameLI").val(sessionStorage.getItem("LinkedInID"));
 });
-
-
-
-		

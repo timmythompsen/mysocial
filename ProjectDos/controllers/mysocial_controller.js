@@ -90,6 +90,8 @@ app.get('/auth/facebook/callback',
 
 
 
+
+
 passport.use(new FacebookStrategy(Keys.facebookKeys, 
   function(accessToken, refreshToken, profile, done) {
     process.nextTick(function(){
@@ -106,6 +108,8 @@ passport.use(new FacebookStrategy(Keys.facebookKeys,
           newUser.name_last = profile.name.familyName;
           newUser.email = profile.emails[0].value;
 
+
+
           newUSer.save(function(err){
             if (err) {
               throw err;
@@ -114,7 +118,9 @@ passport.use(new FacebookStrategy(Keys.facebookKeys,
           });
         }
 
+
       }
+
 
     });
   }));*/
@@ -199,7 +205,6 @@ passport.use(new FacebookStrategy(Keys.facebookKeys,
 
   /* // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
-
     console.log(req.body);
     db.Post.create({
       title : req.body.title,
@@ -211,10 +216,8 @@ passport.use(new FacebookStrategy(Keys.facebookKeys,
     // Add sequelize code for creating a post using req.body,
     // then return the result using res.json
   });
-
   // DELETE route for deleting posts
   app.delete("/api/posts/:id", function(req, res) {
-
     db.Post.destroy({
       where : {
         id: req.params.id
@@ -225,7 +228,6 @@ passport.use(new FacebookStrategy(Keys.facebookKeys,
     // Add sequelize code to delete a post where the id is equal to req.params.id, 
     // then return the result to the user using res.json
   });
-
   // PUT route for updating posts
   app.put("/api/posts", function(req, res) {
     db.Post.update({

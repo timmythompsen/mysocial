@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha",
-    "start": "node server.js"
+    "start": "server.js"
   },
   "author": "Tim T",
   "license": "ISC",
@@ -15,6 +15,10 @@
     "method-override": "^2.3.10",
     "mysql2": "^1.5.0",
     "mz": "^2.7.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "routes": "^2.1.0",
     "sequelize": "^4.22.8",
