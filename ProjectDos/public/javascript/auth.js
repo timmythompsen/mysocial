@@ -96,7 +96,10 @@ window.onload=(function() {
 
   nbUpdateFeeds.addEventListener('click', e=> {
     console.log("nbUpdateFeeds clicked");
-    getAllFeeds();
+    //getAllFeeds();
+    $.get("/auth/facebook", function(data) {
+      console.log("fb auth");
+    });
   });
 
   // add real time listener
@@ -108,6 +111,7 @@ window.onload=(function() {
       sessionStorage.setItem("UniqueID",firebaseUser.uid);
       console.log("Unique Id (sessionStorage: UniqueID): " + sessionStorage.getItem("UniqueID"));
       sessionStorage.setItem("UserID",firebaseUser.email);
+      sessionStorage.setItem("email", firebaseUser.email);
       console.log("User email/login (sessionStorage: UserID): " + sessionStorage.getItem("UserID"));
       sessionStorage.setItem("TwitterID",txtTwitterName.value);
       sessionStorage.setItem("FaceBookID",txtFBName.value);

@@ -31,18 +31,18 @@ function updateUser(event) {
     facebook_name: stgNameFB.value,
     twitter_name: stgNameTwitter.value,
     insta_name: stgNameInsta.value,
-    li_name: stgNameLI,
-    interest1: stgInt1,
-    interest2: stgInt2,
-    interest3: stgInt3,
-    profile_pic: stgProfilePic
+    li_name: stgNameLI.value,
+    interest1: stgInt1.value,
+    interest2: stgInt2.value,
+    interest3: stgInt3.value,
+    profile_pic: stgProfilePic.value
   };  
+  console.log('update - var user ', user)
 
   $.put("/api/users/"+id, user, function(result) {
     console.log('update result: ', result);
     console.log('update successful');
-
-  })  
+  });  
 }
 
 // This function retrieves the current user's record
@@ -55,7 +55,7 @@ function findUser(event) {
   $.get("/api/users/"+id, function(data) {
     console.log('post result: ', data);
     console.log('post successful');
-    console.log('twitter id ',data[0].twitter_name);
+    // console.log('twitter id ',data[0].twitter_name);
 
     // store values from mySql to session storage
     // UniqueID and UserID are stored to sessionStorage
